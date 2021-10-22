@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="./customcss.css">
+
+    <title>SHOW HIDE TOGGLE</title>
+    <style>
+ 
+ 
+        </style>
+        </head>
+        <div class="dropdown">
+            <button class="dropbtn">TPR CONTENTS</button>
+            <div class="dropdown-content">
+                <button id="t1" onclick="cHorse()">SHOW HORSE</button>
+                <button id="t2" onclick="cDog()">SHOW DOG</button>
+            </div>
+          </div>
+          
+         
+
+<!-- 
+<div id="myDIV">
+This is a DIV element.
+</div>
+       -->
+            <div class="draggable" style="margin:0 120px; padding:5px;"> <img style="display: none;" id="img1" src="https://res.cloudinary.com/dqb0rdm5h/image/upload/v1634779511/IMG-3_pxcfpy.png" height="200px" /> </div>
+            <div class="draggable" style="margin:0 0; padding:5px;"> <img  style="display: none;" id="img2" src="https://res.cloudinary.com/dqb0rdm5h/image/upload/v1634779511/IMG-4_w49e08.png" height="200px;" /> </div>
+
+        
+<script src="js/custome-js.js"></script>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script> <script> // target elements with the "draggable" class interact('.draggable') .draggable({ // enable inertial throwing inertia: true, // keep the element within the area of it's parent modifiers: [ interact.modifiers.restrictRect({ restriction: 'parent', endOnly: true }) ], // enable autoScroll autoScroll: true, listeners: { // call this function on every dragmove event move: dragMoveListener, // call this function on every dragend event end (event) { var textEl = event.target.querySelector('p') textEl && (textEl.textContent = 'moved a distance of ' + (Math.sqrt(Math.pow(event.pageX - event.x0, 2) + Math.pow(event.pageY - event.y0, 2) | 0)) .toFixed(2) + 'px') } } }) function dragMoveListener (event) { var target = event.target // keep the dragged position in the data-x/data-y attributes var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy // translate the element target.style.transform = 'translate(' + x + 'px, ' + y + 'px)' // update the posiion attributes target.setAttribute('data-x', x) target.setAttribute('data-y', y) } // this function is used later in the resizing and gesture demos window.dragMoveListener = dragMoveListener </script> 
+      <script>
+        // target elements with the "draggable" class
+        interact('.draggable')
+          .draggable({
+            // enable inertial throwing
+            inertia: true,
+            // keep the element within the area of it's parent
+            modifiers: [
+              interact.modifiers.restrictRect({
+                restriction: 'parent',
+                endOnly: true
+              })
+            ],
+            // enable autoScroll
+            autoScroll: true,
+        
+            listeners: {
+              // call this function on every dragmove event
+              move: dragMoveListener,
+        
+              // call this function on every dragend event
+              end (event) {
+                var textEl = event.target.querySelector('p')
+        
+                textEl && (textEl.textContent =
+                  'moved a distance of ' +
+                  (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
+                             Math.pow(event.pageY - event.y0, 2) | 0))
+                    .toFixed(2) + 'px')
+              }
+            }
+          })
+        
+        function dragMoveListener (event) {
+          var target = event.target
+          // keep the dragged position in the data-x/data-y attributes
+          var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+          var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+        
+          // translate the element
+          target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
+        
+          // update the posiion attributes
+          target.setAttribute('data-x', x)
+          target.setAttribute('data-y', y)
+        }
+        
+        // this function is used later in the resizing and gesture demos
+        window.dragMoveListener = dragMoveListener
+            </script>
+
+
+             
+
+</script>
+</body>
+</html>
